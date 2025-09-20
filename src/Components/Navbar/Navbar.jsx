@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './Navbar.css';
-import zara from '../../assets/zara-mini.png';
+import zaraMini from '../../assets/zara-mini.png';
 
 const Navbar = () => {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Logo */}
       <div className="logo">
-        <img src={zara} alt="Logo Zara" className="nav-img" />
+        <img src={zaraMini} alt="Logo Zara" className="nav-img" />
       </div>
 
       {/* Menu */}

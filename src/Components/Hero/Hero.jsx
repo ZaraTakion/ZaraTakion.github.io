@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
-import profile_img from '../../assets/zara-eu-Zara.png';
+import profile_img from '/src/assets/profile_img.png';
 
 const Hero = () => {
   return (
