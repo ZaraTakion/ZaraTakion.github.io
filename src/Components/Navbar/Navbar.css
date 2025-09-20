@@ -1,0 +1,79 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo */
+.nav-img {
+    width: 90px;
+    border-radius: 10px;
+}
+
+/* Menu */
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #b8b1c4;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #aa1d2c;
+}
+
+/* Botão de menu para mobile */
+.nav-connect {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 120%);
+    transition: 0.3s;
+}
+
+.nav-connect:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        width: 200px;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-connect {
+        display: block;
+    }
+}

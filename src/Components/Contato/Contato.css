@@ -1,0 +1,39 @@
+.contato {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #111;
+}
+
+.contato h2 {
+    font-size: 36px;
+    color: #b8b1c4;
+    margin-bottom: 30px;
+}
+
+.contato-links a {
+    display: inline-block;
+    margin: 10px 15px;
+    padding: 14px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: white;
+    background-color: #aa1d2c;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.contato-links a:hover {
+    background-color: #e3b5c0;
+    color: #70151e;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato h2 { font-size: 28px; }
+    .contato-links a {
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+    }
+}

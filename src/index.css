@@ -1,0 +1,22 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte global */
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a1a1a, #333); /* degradê escuro, mas menos preto */
+    color: #f0f0f0;
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* Links */
+a { text-decoration: none; }
+
+/* Imagens responsivas */
+img { max-width: 100%; height: auto; display: block; }
