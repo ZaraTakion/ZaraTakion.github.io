@@ -1,79 +1,53 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #000;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(20, 20, 20, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Logo */
 .nav-img {
-    width: 70px;
-    border-radius: 100%;
+  height: 40px;
+  border-radius: 50%;
 }
 
-/* Menu */
 .nav-menu {
-    display: flex;
-    gap: 40px;
-    list-style: none;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-.nav-menu li a {
-    text-decoration: none;
-    color: #b8b1c4;
-    font-weight: 500;
-    transition: 0.3s;
+.nav-menu li {
+  cursor: pointer;
+  font-weight: 500;
+  color: #bbb;
+  transition: color 0.3s;
 }
 
-.nav-menu li a:hover {
-    color: #aa1d2c;
+.nav-menu li.active,
+.nav-menu li:hover {
+  color: var(--cor-primaria);
 }
 
-/* Botão de menu para mobile */
 .nav-connect {
-    display: none;
-    cursor: pointer;
-    color: white;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 30px;
-    background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 120%);
-    transition: 0.3s;
+  background: var(--cor-primaria);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
 }
 
 .nav-connect:hover {
-    transform: scale(1.05);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background-color: #111;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-        width: 200px;
-        border-radius: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: 0.3s;
-    }
-
-    .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .nav-connect {
-        display: block;
-    }
+  background: var(--cor-terciaria);
 }

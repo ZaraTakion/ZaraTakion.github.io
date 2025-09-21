@@ -1,33 +1,57 @@
-import { useState } from "react";
-import './Navbar.css';
-import logo from '../../assets/logo.png';
+import './Navbar.css'
+import zara from '../../assets/logo.png'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
-  const [menuAberto, setMenuAberto] = useState(false);
+  const [activeSection, setActiveSection] = useState('home')
 
-  const toggleMenu = () => setMenuAberto(!menuAberto);
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section')
+      let current = 'home'
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id')
+        }
+      })
+
+      setActiveSection(current)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
-    <nav className="navbar">
-      {/* Logo */}
-      <div className="logo">
-        <img src={logo} alt="Logo Zara" className="nav-img" />
-      </div>
+    <header className="navbar">
+      <img className="nav-img" src={zara} alt="Logo Zara" />
 
-      {/* Menu */}
-      <ul className={`nav-menu ${menuAberto ? 'active' : ''}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#contato">Contato</a></li>
+      <ul className="nav-menu">
+        {['home', 'sobre', 'portfolio', 'contato'].map((sec) => (
+          <li
+            key={sec}
+            className={activeSection === sec ? 'active' : ''}
+            onClick={() => scrollToSection(sec)}
+          >
+            {sec.charAt(0).toUpperCase() + sec.slice(1)}
+          </li>
+        ))}
       </ul>
 
-      {/* Botão mobile */}
-      <div className="nav-connect" onClick={toggleMenu}>
-        {menuAberto ? "Fechar" : "Menu"}
-      </div>
-    </nav>
-  );
-};
+      <button className="nav-connect" onClick={() => scrollToSection('contato')}>
+        Conectar
+      </button>
+    </header>
+  )
+}
 
-export default Navbar;
+export default Navbar

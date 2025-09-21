@@ -1,22 +1,57 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Fonte global */
+/* Fonte e cores globais */
 body {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #1a1a1a, #333); /* degradê escuro, mas menos preto */
-    color: #f0f0f0;
-    font-family: 'Outfit', sans-serif;
-    scroll-behavior: smooth;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #1a1a1a, #333);
+  color: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
 }
 
+/* Hierarquia tipográfica */
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.6;
+}
 
 /* Links */
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  color: inherit;
+}
 
 /* Imagens responsivas */
-img { max-width: 100%; height: auto; display: block; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Paleta de cores principais */
+:root {
+  --cor-primaria: #aa1d2c; /* vermelho forte */
+  --cor-secundaria: #e3b5c0; /* rosa suave */
+  --cor-terciaria: #70151e; /* vinho escuro */
+  --cor-acento: #b8b1c4; /* lilás */
+  --cor-texto-secundario: #9a6e5f; /* marrom suave */
+}
+
+/* Seções alternadas */
+section:nth-child(even) {
+  background: #2a2a2a;
+}
+section:nth-child(odd) {
+  background: #1a1a1a;
+}

@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import './Contato.css';
 
 const Contato = () => {
   const contatos = [
-    { nome: "Email", link: "mailto:seuemail@exemplo.com" },
-    { nome: "LinkedIn", link: "https://www.linkedin.com/in/seu-perfil", target: "_blank", rel: "noopener noreferrer" },
-    { nome: "GitHub", link: "https://github.com/seu-usuario", target: "_blank", rel: "noopener noreferrer" }
+    { nome: "Email", link: "mailto:zara.maciel@email.com", icon: <FaEnvelope /> },
+    { nome: "LinkedIn", link: "https://www.linkedin.com/in/zara-maciel", icon: <FaLinkedin /> },
+    { nome: "GitHub", link: "https://github.com/zara-maciel", icon: <FaGithub /> }
   ];
 
   return (
@@ -16,22 +17,31 @@ const Contato = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        Contato
+        Entre em Contato
       </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        Quer trabalhar comigo ou tem alguma dúvida? Conecte-se pelas plataformas abaixo.
+      </motion.p>
 
       <div className="contato-links">
         {contatos.map((item, index) => (
           <motion.a
             key={index}
             href={item.link}
-            target={item.target || "_self"}
-            rel={item.rel || undefined}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            {item.nome}
+            {item.icon} {item.nome}
           </motion.a>
         ))}
       </div>
