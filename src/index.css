@@ -7,16 +7,15 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #1a1a1a, #333);
+  background: #1a1a1a;
   color: #f0f0f0;
   font-family: 'Outfit', sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Hierarquia tipográfica */
+/* Tipografia */
 h1, h2, h3 {
   font-weight: 600;
-  letter-spacing: -0.5px;
   line-height: 1.3;
 }
 
@@ -29,35 +28,31 @@ p {
 /* Links */
 a {
   text-decoration: none;
-  transition: 0.3s;
   color: inherit;
 }
 
-/* Imagens responsivas */
+/* Imagens */
 img {
   max-width: 100%;
-  height: auto;
   display: block;
+  border-radius: 8px;
 }
 
-/* Paleta de cores principais */
+/* Cores */
 :root {
-  --cor-primaria: #aa1d2c;
-  --cor-secundaria: #e3b5c0;
-  --cor-terciaria: #70151e;
-  --cor-acento: #b8b1c4;
-  --cor-texto-secundario: #9a6e5f;
+  --primaria: #aa1d2c;
+  --secundaria: #e3b5c0;
+  --acento: #b8b1c4;
 }
 
-/* Seções alternadas */
+/* Seções */
+section {
+  padding: clamp(3rem, 6vw, 5rem) 1rem;
+}
+
 section:nth-child(even) {
-  background: #2a2a2a;
+  background: #222;
 }
 section:nth-child(odd) {
   background: #1a1a1a;
-}
-
-/* Espaçamento geral das seções */
-section {
-  padding: clamp(3rem, 6vw, 5rem) 1rem;
 }

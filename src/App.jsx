@@ -1,19 +1,19 @@
-import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/Hero';
-import Sobre from './Components/Sobre/Sobre';
-import Portfolio from './Components/Portfolio/Portfolio';
-import Contato from './Components/Contato/Contato';
+import React from 'react';
+import Navbar from './Components/Navbar';
+import Hero from './Components/Hero';
+import Sobre from './Components/Sobre';
+import Portfolio from './Components/Portfolio';
+import Contato from './Components/Contato';
+import './index.css';
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Sobre />
-      <Portfolio />
-      <Contato />
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <Navbar />
+    <Hero />
+    <Sobre />
+    <Portfolio />
+    <Contato />
+  </div>
+);
 
 export default App;
