@@ -1,20 +1,20 @@
 .hero {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: clamp(3rem, 8vw, 6rem) 1rem;
 }
 
 .hero-img {
-  width: 180px;
-  height: 180px;
+  width: clamp(120px, 20vw, 180px);
+  height: clamp(120px, 20vw, 180px);
   border-radius: 50%;
   border: 3px solid var(--cor-primaria);
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin: 0 auto 1.5rem;
 }
 
 .hero-tagline {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--cor-secundaria);
   margin-bottom: 0.5rem;
 }
@@ -26,16 +26,32 @@
   font-weight: 700;
 }
 
+.hero h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.3;
+}
+
 .hero-desc {
-  max-width: 600px;
+  max-width: 650px;
   margin: 1rem auto;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--cor-acento);
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+.hero-action {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .hero-action a {
   display: inline-block;
-  margin: 1rem 0.5rem;
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 500;
@@ -47,12 +63,26 @@
   color: #fff;
 }
 
-.hero-resume, .hero-portfolio {
+.hero-resume,
+.hero-portfolio {
   border: 1px solid var(--cor-primaria);
   color: var(--cor-primaria);
 }
 
-.hero-resume:hover, .hero-portfolio:hover {
+.hero-resume:hover,
+.hero-portfolio:hover {
   background: var(--cor-primaria);
   color: #fff;
+}
+
+/* 📱 Ajustes para telas pequenas */
+@media (max-width: 480px) {
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .hero-action a {
+    width: 100%;
+    text-align: center;
+  }
 }
