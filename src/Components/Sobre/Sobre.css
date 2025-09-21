@@ -26,3 +26,16 @@
   color: #ddd;
   line-height: 1.7;
 }
+
+/* Melhor leitura em telas menores */
+@media (max-width: 600px) {
+  .sobre-pessoal,
+  .sobre-tecnico {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.4rem;
+  }
+}
