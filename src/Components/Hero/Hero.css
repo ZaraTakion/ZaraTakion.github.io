@@ -49,4 +49,7 @@
   .hero-actions a {
     width: 100%;
   }
+  .hero-img {
+    margin: 20px auto 1rem;
+  }
 }
