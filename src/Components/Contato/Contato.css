@@ -39,3 +39,11 @@
   background: var(--cor-terciaria);
   transform: translateY(-2px);
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .contato-links a {
+    width: 100%;
+    justify-content: center;
+  }
+}

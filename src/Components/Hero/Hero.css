@@ -9,7 +9,7 @@
   border-radius: 50%;
   border: 3px solid var(--cor-primaria);
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   margin: 0 auto 1.5rem;
 }
 
@@ -56,6 +56,7 @@
   border-radius: 6px;
   font-weight: 500;
   transition: 0.3s;
+  text-align: center;
 }
 
 .hero-connect {
@@ -75,7 +76,7 @@
   color: #fff;
 }
 
-/* 📱 Ajustes para telas pequenas */
+/* Mobile */
 @media (max-width: 480px) {
   .hero-desc {
     font-size: 0.9rem;
@@ -83,6 +84,5 @@
 
   .hero-action a {
     width: 100%;
-    text-align: center;
   }
 }
