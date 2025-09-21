@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 70px;
-  background: rgba(20,20,20,0.9);
+  background: rgba(20,20,20,0.95);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +19,7 @@
   border-radius: 50%;
 }
 
+/* Desktop Menu */
 .nav-menu {
   display: flex;
   gap: 2rem;
@@ -52,22 +53,24 @@
   background: var(--cor-terciaria);
 }
 
+/* Hamburger Icon */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  width: 30px;
-  height: 25px;
+  width: 35px;
+  height: 30px;
 }
 
 .menu-toggle span {
-  height: 3px;
+  height: 4px; /* mais visível */
   width: 100%;
-  background: #fff;
-  margin: 3px 0;
-  border-radius: 3px;
+  background: var(--cor-primaria); /* cor que se destaca */
+  margin: 4px 0;
+  border-radius: 2px;
   transition: 0.3s;
+  box-shadow: 0 0 2px #000; /* sombra leve para destacar */
 }
 
 /* Mobile */
@@ -79,7 +82,7 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background: rgba(20,20,20,0.95);
+    background: rgba(20,20,20,0.98);
     padding: 1rem 0;
     display: none;
   }
