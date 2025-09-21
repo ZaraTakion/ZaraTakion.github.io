@@ -75,27 +75,14 @@
   color: #fff;
 }
 
-/* Ajustes mobile */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.6rem;
-    padding: 0 0.5rem;
-  }
-
+/* 📱 Ajustes para telas pequenas */
+@media (max-width: 480px) {
   .hero-desc {
     font-size: 0.9rem;
-    padding: 0 0.5rem;
-  }
-
-  .hero-action {
-    flex-direction: column;
-    gap: 0.8rem;
   }
 
   .hero-action a {
     width: 100%;
     text-align: center;
-    padding: 12px;
   }
 }
-

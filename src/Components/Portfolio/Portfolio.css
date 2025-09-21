@@ -52,21 +52,3 @@
 .card-links a:hover {
   color: var(--cor-secundaria);
 }
-/* Grid adaptado para mobile */
-@media (max-width: 480px) {
-  .portfolio {
-    padding: 2rem 0.5rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-
-  .card h3 {
-    font-size: 1rem;
-  }
-
-  .card p {
-    font-size: 0.9rem;
-  }
-}
