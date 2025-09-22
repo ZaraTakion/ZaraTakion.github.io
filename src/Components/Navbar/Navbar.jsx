@@ -1,3 +1,4 @@
+// src/components/Navbar/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import logo from '../../assets/logo.png';
 import './Navbar.css';
@@ -11,11 +12,12 @@ const Navbar = () => {
       const sections = document.querySelectorAll('section');
       let current = 'home';
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 70;
+        const sectionTop = section.offsetTop - 80;
         if (window.scrollY >= sectionTop) current = section.getAttribute('id');
       });
       setActiveSection(current);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -28,20 +30,23 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <img className="nav-img" src={logo} alt="Logo" />
-      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      <img className="nav-logo" src={logo} alt="Logo" />
+      
+      <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>
         <span></span>
       </div>
+
       <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-        {['inicio','sobre','portfolio','contato'].map((sec) => (
-          <li
-            key={sec}
-            className={activeSection === sec ? 'active' : ''}
+        {['home','sobre','portfolio','contato'].map((sec) => (
+          <li 
+            key={sec} 
+            className={activeSection === sec ? 'active' : ''} 
             onClick={() => scrollToSection(sec)}
           >
             {sec.charAt(0).toUpperCase() + sec.slice(1)}
+            <span className="underline"></span>
           </li>
         ))}
       </ul>

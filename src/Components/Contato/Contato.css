@@ -1,43 +1,73 @@
+/* src/components/Contato/Contato.css */
 .contato {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
 }
 
 .contato h2 {
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
+  color: var(--primaria);
+}
+
+.contato h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--primaria);
+  margin: 0.5rem auto 0;
+  border-radius: 3px;
 }
 
 .contato p {
-  max-width: 500px;
-  margin: 0 auto 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
   color: var(--acento);
+  font-size: 1rem;
 }
 
 .contato-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
+}
+
+.contato-btn {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
-}
-
-.contato-links a {
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: 1px solid var(--primaria);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid var(--primaria);
   color: var(--primaria);
-  font-weight: 500;
-  text-align: center;
-  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  transition: all 0.3s;
 }
 
-.contato-links a:hover {
+.contato-btn:hover {
   background: var(--primaria);
-  color: #fff;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+.contato-btn svg {
+  font-size: 1.2rem;
 }
 
 /* Mobile */
 @media (max-width: 480px) {
-  .contato-links a {
+  .contato-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-btn {
     width: 100%;
+    justify-content: center;
   }
 }
