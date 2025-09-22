@@ -3,8 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: clamp(2rem, 6vw, 6rem) 1rem;
+  padding: clamp(3rem, 6vw, 6rem) 1rem;
   background: linear-gradient(135deg, #1a1a1a, #111);
   text-align: center;
   position: relative;
@@ -13,15 +12,13 @@
 
 .hero-container {
   max-width: 900px;
-  width: 100%;
 }
 
 .hero-img {
-  width: clamp(100px, 20vw, 160px); /* tamanho responsivo */
-  height: clamp(100px, 20vw, 160px);
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top; /* evita corte no topo */
   margin: 0 auto 1rem;
   border: 4px solid var(--primaria);
   box-shadow: 0 0 20px rgba(77,163,255,0.5);
@@ -33,7 +30,7 @@
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 0.5rem;
   color: #fff;
 }
@@ -46,9 +43,8 @@
   color: var(--acento);
   max-width: 600px;
   margin: 0 auto 2rem;
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: 1.1rem;
   line-height: 1.5;
-  padding: 0 10px; /* evita encostar nas bordas no mobile */
 }
 
 .hero-actions {
@@ -66,8 +62,6 @@
   color: var(--primaria);
   background: transparent;
   transition: all 0.3s;
-  flex: 1 1 clamp(120px, 40%, 200px); /* botão responsivo */
-  text-align: center;
 }
 
 .hero-actions a:hover {
@@ -76,18 +70,9 @@
   transform: translateY(-3px);
 }
 
-/* Ajustes específicos para mobile (menor que 480px) */
+/* Mobile */
 @media (max-width: 480px) {
-  .hero {
-    padding: clamp(1.5rem, 5vw, 3rem) 1rem; /* reduz padding superior */
-  }
-
-  .hero-img {
-    border: 3px solid var(--primaria); /* reduz borda para caber melhor */
-    box-shadow: 0 0 15px rgba(77,163,255,0.5);
-  }
-
   .hero-actions a {
-    flex: 1 1 100%; /* botões ocupam largura total */
+    width: 100%;
   }
 }
