@@ -35,7 +35,7 @@ const Navbar = () => {
         <span></span>
       </div>
       <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-        {['home','sobre','portfolio','contato'].map((sec) => (
+        {['inicio','sobre','portfolio','contato'].map((sec) => (
           <li
             key={sec}
             className={activeSection === sec ? 'active' : ''}

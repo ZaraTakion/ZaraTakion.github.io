@@ -1,7 +1,7 @@
 import React from 'react';
-import projeto1 from '../../assets/projeto1.png';
-import projeto2 from '../../assets/projeto2.png';
-import projeto3 from '../../assets/projeto3.png';
+import projeto1 from '../../assets/image1.jpg';
+import projeto2 from '../../assets/image2.jpg';
+import projeto3 from '../../assets/image3.jpg';
 import './Portfolio.css';
 
 const Portfolio = () => {
