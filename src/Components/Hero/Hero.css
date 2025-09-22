@@ -75,7 +75,22 @@
   .hero-actions a {
     width: 100%;
   }
+  
   .hero-img {
-    margin: 10px 10px 10px 10px;
+    width: 120px;      /* reduz o tamanho da imagem */
+    height: 120px;
+    margin: 0 auto 1rem; /* centraliza */
+    border: 3px solid var(--primaria); /* reduz um pouco a borda pra não ficar gigante */
+    box-shadow: 0 0 15px rgba(77,163,255,0.5);
+  }
+
+  .hero h1 {
+    font-size: 1.8rem; /* ajusta título pro mobile */
+  }
+
+  .hero p {
+    font-size: 1rem; /* deixa o texto mais legível no celular */
+    padding: 0 10px; /* evita que encoste nas bordas */
   }
 }
+
