@@ -75,4 +75,7 @@
   .hero-actions a {
     width: 100%;
   }
+  .hero-img {
+    margin-top: 10px;
+  }
 }
