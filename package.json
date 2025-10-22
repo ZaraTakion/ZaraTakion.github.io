@@ -1,32 +1,22 @@
 {
-<<<<<<< HEAD
-  "name": "meu-portfolio",
-=======
-  "name": "portfolio-web",
->>>>>>> ca96d8a95846bed0b4897a515f103f137aa756fe
+  "name": "portifolio-zara",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "homepage": "https://ZaraTakion.github.io/portifolio-zara",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-<<<<<<< HEAD
     "chart.js": "^4.5.1",
     "framer-motion": "^12.23.16",
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.1",
-=======
-    "framer-motion": "^12.23.16",
-    "react": "^19.1.1",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^19.1.1",
-    "react-icons": "^5.5.0",
->>>>>>> ca96d8a95846bed0b4897a515f103f137aa756fe
     "react-router-dom": "^7.9.1"
   },
   "devDependencies": {
@@ -37,10 +27,7 @@
     "eslint": "^9.35.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
-<<<<<<< HEAD
     "gh-pages": "^6.3.0",
-=======
->>>>>>> ca96d8a95846bed0b4897a515f103f137aa756fe
     "globals": "^16.4.0",
     "vite": "^7.1.6"
   }
