@@ -1,0 +1,68 @@
+import { motion } from 'framer-motion'
+import './Projetos.css'
+import airQuality from '../assets/air-quality.png'
+import trafficInsight from '../assets/traffic-insight.png'
+
+const projetos = [
+  {
+    titulo: 'Air Quality Analysis',
+    descricao:
+      'Análise da qualidade do ar com Python, Pandas e visualizações avançadas. Inclui insights temporais e correlação entre poluentes.',
+    img: airQuality,
+    link: 'https://github.com/ZaraTakion/air-quality-analysis',
+    tags: ['Python', 'Pandas', 'Matplotlib', 'EDA'],
+  },
+  {
+    titulo: 'Brazil Traffic Insight',
+    descricao:
+      'Estudo de acidentes de trânsito no Brasil usando dados públicos. Dashboards interativos, geolocalização e análise estatística.',
+    img: trafficInsight,
+    link: 'https://github.com/ZaraTakion/brazil-traffic-insight',
+    tags: ['Data Science', 'Seaborn', 'GeoPandas', 'Dashboard'],
+  },
+]
+
+const Projetos = () => (
+  <section className="projetos section container">
+    <motion.h2
+      className="section-title"
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      Projetos em Destaque
+    </motion.h2>
+
+    <div className="projetos-grid">
+      {projetos.map((p, i) => (
+        <motion.a
+          key={i}
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="projeto-card surface"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: i * 0.2 }}
+        >
+          <div className="thumb">
+            <img src={p.img} alt={p.titulo} />
+          </div>
+          <div className="info">
+            <h3>{p.titulo}</h3>
+            <p>{p.descricao}</p>
+            <div className="tags">
+              {p.tags.map((t, j) => (
+                <span key={j}>{t}</span>
+              ))}
+            </div>
+          </div>
+        </motion.a>
+      ))}
+    </div>
+  </section>
+)
+
+export default Projetos

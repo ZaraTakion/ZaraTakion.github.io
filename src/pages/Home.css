@@ -1,0 +1,88 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 48px;
+  min-height: calc(100vh - 64px);
+  padding-block: 64px;
+}
+
+.home-text {
+  flex: 1 1 480px;
+  z-index: 2;
+}
+
+.home h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.gradient {
+  background: var(--grad-strong);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro {
+  margin-top: 18px;
+  color: var(--text-soft);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.links {
+  margin-top: 28px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.links a {
+  color: var(--muted);
+  font-weight: 500;
+  transition: color var(--trans);
+}
+.links a:hover {
+  color: var(--accent-1);
+}
+
+.home-visual {
+  flex: 1 1 380px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.profile-img {
+  width: 320px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-1);
+  box-shadow: 0 0 30px rgba(79,140,255,.25);
+  z-index: 2;
+}
+.data-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(79,140,255,0.25), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+  .home { flex-direction: column-reverse; text-align: center; }
+  .actions { justify-content: center; }
+  .links { justify-content: center; }
+}

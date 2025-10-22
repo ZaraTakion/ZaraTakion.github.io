@@ -1,0 +1,85 @@
+.footer {
+  background: linear-gradient(180deg, var(--surface-2), #050818);
+  border-top: 1px solid var(--border);
+  padding-block: 60px 30px;
+  color: var(--text-soft);
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 300px at 50% -10%, rgba(79,140,255,.08), transparent);
+  z-index: 0;
+}
+
+.footer-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.footer-main h3 {
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.footer-main h3 span {
+  background: var(--grad-strong);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.footer-main p {
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-links a {
+  color: var(--accent-1);
+  font-weight: 500;
+  position: relative;
+  transition: color var(--trans);
+}
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0%; height: 2px;
+  background: var(--accent-1);
+  transition: width var(--trans);
+}
+.footer-links a:hover {
+  color: var(--accent-2);
+}
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-copy {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .footer { padding-block: 48px 24px; }
+  .footer-main h3 { font-size: 20px; }
+  .footer-links { gap: 20px; }
+}
