@@ -1,0 +1,58 @@
+/* src/components/Sobre/Sobre.css */
+.sobre {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.sobre h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 3rem;
+  color: var(--primaria);
+  position: relative;
+}
+
+.sobre h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--primaria);
+  margin: 0.5rem auto 0;
+  border-radius: 3px;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.sobre-card {
+  background: #222;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.sobre-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(77,163,255,0.5);
+}
+
+.sobre-card p {
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+}
