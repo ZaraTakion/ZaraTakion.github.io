@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://ZaraTakion.github.io/portifolio-zara",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
