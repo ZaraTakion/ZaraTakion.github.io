@@ -1,24 +1,62 @@
+.contato {
+  text-align: center;
+}
+
 .contato-intro {
   max-width: 640px;
   margin: 0 auto 36px;
   text-align: center;
   color: var(--text-soft);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 17px;
 }
 
+/* ===== Formulário ===== */
 .contato-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 520px;
   margin: 0 auto 48px;
-  padding: 28px;
+  padding: 32px;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(6px);
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  color: var(--text);
+  font-size: 15px;
+  transition: border var(--trans), box-shadow var(--trans);
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: color-mix(in srgb, var(--accent-1) 70%, var(--accent-2) 30%);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.18);
+  outline: none;
 }
 
 .contato-form textarea {
   resize: none;
 }
 
+/* ===== Botão ===== */
+.contato-form .btn-primary {
+  margin-top: 6px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Links ===== */
 .contato-links {
   display: flex;
   justify-content: center;
@@ -29,13 +67,22 @@
 .contato-links a {
   color: var(--accent-1);
   font-weight: 500;
-  transition: color var(--trans);
+  transition: color var(--trans), transform var(--trans);
 }
+
 .contato-links a:hover {
   color: var(--accent-2);
+  transform: translateY(-2px);
 }
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
-  .contato-form { padding: 20px; }
+  .contato-form {
+    padding: 24px;
+  }
+
+  .contato-intro {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }

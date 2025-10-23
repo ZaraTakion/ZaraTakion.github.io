@@ -22,47 +22,65 @@ const projetos = [
   },
 ]
 
-const Projetos = () => (
-  <section className="projetos section container">
-    <motion.h2
-      className="section-title"
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
-      Projetos em Destaque
-    </motion.h2>
+const Projetos = () => {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    show: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay },
+    }),
+  }
 
-    <div className="projetos-grid">
-      {projetos.map((p, i) => (
-        <motion.a
-          key={i}
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="projeto-card surface"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: i * 0.2 }}
-        >
-          <div className="thumb">
-            <img src={p.img} alt={p.titulo} />
-          </div>
-          <div className="info">
-            <h3>{p.titulo}</h3>
-            <p>{p.descricao}</p>
-            <div className="tags">
-              {p.tags.map((t, j) => (
-                <span key={j}>{t}</span>
-              ))}
+  return (
+    <section className='projetos section container'>
+      {/* ===== Título ===== */}
+      <motion.h2
+        className='section-title'
+        initial='hidden'
+        whileInView='show'
+        variants={fadeUp}
+        viewport={{ once: true }}
+      >
+        Projetos em Destaque
+      </motion.h2>
+
+      {/* ===== Grid de Projetos ===== */}
+      <div className='projetos-grid'>
+        {projetos.map((p, i) => (
+          <motion.a
+            key={p.titulo}
+            href={p.link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='projeto-card surface'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+          >
+            <div className='thumb'>
+              <img
+                src={p.img}
+                alt={`Preview do projeto ${p.titulo}`}
+                loading='lazy'
+              />
             </div>
-          </div>
-        </motion.a>
-      ))}
-    </div>
-  </section>
-)
+
+            <div className='info'>
+              <h3>{p.titulo}</h3>
+              <p>{p.descricao}</p>
+              <div className='tags'>
+                {p.tags.map((t) => (
+                  <span key={t}>{t}</span>
+                ))}
+              </div>
+            </div>
+          </motion.a>
+        ))}
+      </div>
+    </section>
+  )
+}
 
 export default Projetos

@@ -1,9 +1,8 @@
 .footer {
-  background: linear-gradient(180deg, var(--surface-2), #050818);
+  background: linear-gradient(180deg, var(--surface-2), #060a18);
   border-top: 1px solid var(--border);
-  padding-block: 60px 30px;
+  padding-block: 64px 32px;
   color: var(--text-soft);
-  font-size: 15px;
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +11,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(600px 300px at 50% -10%, rgba(79,140,255,.08), transparent);
+  background: radial-gradient(800px 400px at 50% -10%, rgba(79,140,255,.06), transparent);
   z-index: 0;
 }
 
@@ -23,14 +22,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 28px;
+  gap: 32px;
 }
 
+/* ===== Título e texto principal ===== */
 .footer-main h3 {
   font-weight: 800;
   font-size: 24px;
-  margin-bottom: 8px;
   color: var(--text);
+  letter-spacing: -0.02em;
 }
 .footer-main h3 span {
   background: var(--grad-strong);
@@ -38,12 +38,14 @@
   color: transparent;
 }
 .footer-main p {
-  max-width: 520px;
+  max-width: 540px;
   margin: 0 auto;
   line-height: 1.6;
   color: var(--text-soft);
+  font-size: 15px;
 }
 
+/* ===== Links ===== */
 .footer-links {
   display: flex;
   gap: 28px;
@@ -54,27 +56,32 @@
   color: var(--accent-1);
   font-weight: 500;
   position: relative;
-  transition: color var(--trans);
+  transition: color var(--trans), transform var(--trans);
+}
+.footer-links a:hover {
+  color: var(--accent-2);
+  transform: translateY(-2px);
 }
 .footer-links a::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -3px;
-  width: 0%; height: 2px;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
   background: var(--accent-1);
   transition: width var(--trans);
-}
-.footer-links a:hover {
-  color: var(--accent-2);
 }
 .footer-links a:hover::after {
   width: 100%;
 }
 
+/* ===== Copyright ===== */
 .footer-copy {
   margin-top: 16px;
   font-size: 13px;
   color: var(--muted);
+  letter-spacing: 0.02em;
 }
 
 /* ===== Responsivo ===== */
