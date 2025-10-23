@@ -1,9 +1,6 @@
 {
-  "buildCommand": "npm run vercel-build",
+  "framework": null,
   "outputDirectory": "dist",
-  "framework": "vite",
-  "installCommand": "npm install --legacy-peer-deps --no-optional",
-  "env": {
-    "ROLLUP_SKIP_NATIVE": "true"
-  }
+  "buildCommand": "echo 'No build needed'",
+  "installCommand": "echo 'No install needed'"
 }
